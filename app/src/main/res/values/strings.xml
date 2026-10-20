@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AutoSkip</string>
+    <string name="service_label">AutoSkip 광고 종료 도우미</string>
+    <string name="service_description">허용한 앱에서 사용자가 직접 시작한 광고가 끝났을 때, 화면에 표시된 Skip/Close/X/Done 버튼을 찾아 눌러 줍니다. 버튼 정보가 없는 광고에서는 화면 위쪽 모서리를 캡처해 X 모양을 찾습니다. 허용 목록 밖의 앱에서는 화면 내용을 읽거나 클릭하지 않으며, 화면 텍스트와 이미지는 저장하거나 기기 밖으로 전송하지 않습니다.</string>
+</resources>

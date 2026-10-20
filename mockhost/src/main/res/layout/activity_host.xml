@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="충전소"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="받은 별: 0"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/watch_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="영상보고 ⭐ 5 받기 (유형 A: Skip)" />
+
+    <Button
+        android:id="@+id/watch_a2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="영상보고 ⭐ 5 받기 (유형 A2: 지연 종료)" />
+
+    <Button
+        android:id="@+id/watch_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="영상보고 ⭐ 5 받기 (유형 B: 스토어 경유)" />
+
+    <Button
+        android:id="@+id/watch_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="영상보고 ⭐ 5 받기 (유형 C: Skip → 엔드카드 → X)" />
+
+    <Button
+        android:id="@+id/watch_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="영상보고 ⭐ 5 받기 (유형 D: 그림 X, 노드 없음)" />
+
+    <Button
+        android:id="@+id/open_popup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="일반 팝업 열기 (오탐 테스트)" />
+
+    <Button
+        android:id="@+id/open_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공지 화면 열기 (오탐 테스트)" />
+
+    <TextView
+        android:id="@+id/last_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="" />
+</LinearLayout>

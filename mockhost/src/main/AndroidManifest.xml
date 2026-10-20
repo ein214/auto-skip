@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="market" />
+        </intent>
+    </queries>
+
+    <application
+        android:label="MockHost 충전소"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+        <activity
+            android:name=".HostActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 광고 SDK Activity 흉내 (예: com.google.android.gms.ads.AdActivity) -->
+        <activity
+            android:name=".MockAdActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen" />
+
+        <!-- 광고가 아닌 일반 공지 화면. X 버튼이 있어도 눌리면 안 된다. -->
+        <activity
+            android:name=".NoticeActivity"
+            android:exported="false" />
+    </application>
+</manifest>

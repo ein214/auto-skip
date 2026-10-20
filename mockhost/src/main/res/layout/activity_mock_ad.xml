@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 영상 재생 구간 -->
+    <LinearLayout
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ad_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFC107"
+            android:padding="4dp"
+            android:text="@string/ad_label"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/video_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- 유형 A: 오른쪽 위 Skip 버튼 -->
+    <Button
+        android:id="@+id/skip_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="24dp"
+        android:visibility="gone" />
+
+    <!-- 유형 B: 설치 유도 엔드카드 -->
+    <LinearLayout
+        android:id="@+id/end_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⭐ 모의 RPG — 지금 설치하고 보상 받기"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/cta_install"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="설치하기" />
+
+        <TextView
+            android:id="@+id/end_card_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="" />
+    </LinearLayout>
+
+    <!-- 유형 B: 스토어 복귀 후 나타나는 X (텍스트 없이 contentDescription만 있는 이미지 버튼) -->
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="24dp"
+        android:contentDescription="Close"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:visibility="gone" />
+</FrameLayout>

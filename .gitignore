@@ -1,0 +1,30 @@
+# Gradle / 빌드 산출물
+.gradle/
+.kotlin/
+build/
+captures/
+.cxx/
+.externalNativeBuild/
+
+# 로컬 환경 (SDK 경로 등)
+local.properties
+
+# 설치 파일
+*.apk
+*.aab
+*.ap_
+output-metadata.json
+
+# 서명 키와 비밀 설정 — 절대 커밋하지 않는다
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+google-services.json
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+*.log

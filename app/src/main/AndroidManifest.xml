@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 네트워크 권한 없음: 화면 텍스트/이미지를 외부로 보내지 않는다. -->
+
+    <!-- 삼성 등 일부 기기가 조용한 광고 화면에서 서비스 프로세스를 동결해 재확인 타이머가 멈추는 것을 막기 위해,
+         사용자가 직접 배터리 최적화 예외를 허용할 수 있게 한다. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- 스토어 이동 버튼이 나타났을 때 짧은 진동 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 광고 쿨타임이 끝나는 시각에 알림 (소리 + 짧은 진동) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- 허용 앱 선택 목록과 Activity 판별을 위해 런처 앱만 조회한다 (QUERY_ALL_PACKAGES 불필요). -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- BIND_ACCESSIBILITY_SERVICE: 시스템만 바인드할 수 있도록 보호. 활성화는 사용자가 설정에서 직접 한다. -->
+        <service
+            android:name=".accessibility.AutoSkipAccessibilityService"
+            android:exported="false"
+            android:label="@string/service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <receiver
+            android:name=".automation.CooldownAlarmReceiver"
+            android:exported="false" />
+
+        <!-- 빠른 설정 타일 (긴급 중지) -->
+        <service
+            android:name=".AutoSkipTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_tile"
+            android:label="AutoSkip"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

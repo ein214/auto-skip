@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  packageNames를 지정하지 않는 이유: 사용자가 광고 화면에서 Play 스토어 등 외부 앱으로
+  나갔는지(EXTERNAL_STORE) 알아야 하기 때문. 허용 목록 밖 앱의 이벤트는 패키지명만 보고
+  즉시 버리며, 노드를 읽거나 클릭하지 않는다.
+
+  canTakeScreenshot/canPerformGestures: 접근성 노드가 없는 광고의 X를 이미지로 찾아 탭하기 위함 (기획서 P2).
+  광고 화면으로 확인된 상태에서만 사용하며, 캡처 이미지는 저장/전송하지 않는다.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagIncludeNotImportantViews"
+    android:canRetrieveWindowContent="true"
+    android:canPerformGestures="true"
+    android:canTakeScreenshot="true"
+    android:description="@string/service_description"
+    android:notificationTimeout="100"
+    android:settingsActivity="com.personal.autoskip.MainActivity" />
